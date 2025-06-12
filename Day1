@@ -8,13 +8,148 @@ SQL Fundamental- SELECT, FROM, WHERE, ORDER BY
 - Evaluation: Can you retrieve specific columns, fillter rows, and sort results?
 - Documentation: SQL Cheat Sheet, adding basic commands
 *******************************************************************************
-Learning :
++++++ Learning +++++ :
 
+SQL is a Structure Query language (SQL) 
+- Imperative Programming: 
+      Imperative programming like python, java, php etc. you write step-by-step instructions to that tells the computer how to work on something. 
+
+- Declarative Programming: 
+      First you need to understand what data is sorted in your table, then we need to write query descibing what data you want and pull it from data base management system. 
+The database management system understand how to get it. This is called declarative programming
+
+- Before going into learning SQL first we need to undersand the design of databases and how it stores
+  - Entity Relationship (ER) diagrams
+  - Schemas
+  - Table structure and relationships
+
++++++ Entity Relationship (ER) diagrams:
+        An ER diagram is a planning tool used to visualize the structure of a database, It helps you figure out what kind of data you need and how to store them into database, and how all of those pieces of data relate/talk to each other
+
+- Entity : 
+      Entity are the main objects or concepts in system, like Person, Dog, Course etc, Entities have attributes that describe them. A person might have name, data of birth and addess etc are attributes.
+
+- Relationships: 
+      It describes how the data are connected to each other. Eg A person might adobt a Dog, or a student might enrolle for course.
+<img src="data:image/png;base64,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" />
+
+
++++++ Schemas:
+      A schemas is another way of describe the structure of a database. It shows the same information as ER, but in more technical and precise the format and focus on how the data will be stored.
+Each elements of a shema will become table in a database
+
+Some of the sample schema models which are designed to solve the diff applications requirements
+    - Flat Model:
+        A flat model schema is a 2-D array which contains rows and columns
+
+    - Hierarchical Model:
+        Data is arranged using parent-child relationships and a tree-like structure
+
+    - Network Model:
+        It is similar to hierarchical model in that is represents data using nodes(enties) and edge (relationships), it is flexible model to allow many-to-many relationships.
+
+    - Relational Model:
+        It is better for desingin obect-oriented programmings
+
+    - Star Schema:
+        It is helping for storing and analyzing large amount of data. it contants tow enties "Fact" table contains numerial data and "Dimension" table contains related to dimentions ex. product, time, people etc
+
+    - Snowflake Schema:
+        It is just like star schema but the main differance in both models is that in snowflake schema - dimentaions tables are further normalized into multiple related tables. The snowflake schema is used for anlyzing large amount of data.
+
+
+------------------------
+SQL Syntax:
+------------------------
+
+SELECT <fields list> 
+  FROM <table name> 
+  WHERE <condition> 
+  ORDER BY <column name> <sort ASC or DESC>
+
+Explanation:
+- SELECT 
+    - What you want from the table specify the columns names or * for all columns
+
+- FROM 
+    - It is denotated as from where or from which place you want the selected data either it is table name, schema etc
+
+- WHERE 
+    - It is denoted as condition on what and how you want you data, like filtes Eg. Name="ravi" or Age>22 etc
+
+- ORDER BY 
+    - It sort the result data in order of ascending and descending
+
+
+
+SELECT * FROM employee WHERE emp_dept='sales' ORDER BY total_sales ASC
+
+SELECT emp_first_name, emp_last_name, total_sales FROM employee WHERE emp_dept="sales" ORDER BY total_sales ASC
 
 
 
 *******************************************************************************
-Task:
+Documentation:
+
+------------------------
+SQL Syntax:
+------------------------
+
+SELECT <fields list> 
+  FROM <table name> 
+  WHERE <condition> 
+  ORDER BY <column name> <sort ASC or DESC>
+
+Explanation:
+- SELECT 
+    - What you want from the table specify the columns names or * for all columns
+
+- FROM 
+    - It is denotated as from where or from which place you want the selected data either it is table name, schema etc
+
+- WHERE 
+    - It is denoted as condition on what and how you want you data, like filtes Eg. Name="ravi" or Age>22 etc
+
+- ORDER BY 
+    - It sort the result data in order of ascending and descending
+
+
+
+SELECT * FROM employee WHERE emp_dept='sales' ORDER BY total_sales ASC
+
+SELECT emp_first_name, emp_last_name, total_sales FROM employee WHERE emp_dept="sales" ORDER BY total_sales ASC
+
+
+*******************************************************************************
+Tasks:
+-----------
+Table :"world"
+name	        continent	    area	      population	gdp
+Afghanistan	  Asia	        652230	    25500100	  20343000000
+Albania	      Europe	      28748	      2831741	    12960000000
+Algeria	      Africa	      2381741	    37100000	  188681000000
+Andorra	      Europe	      468	        78115	      3712000000
+Angola	      Africa	      1246700	    20609294	  100990000000
+
+1. The example uses a WHERE clause to show the population of 'France'. Note that strings should be in 'single quotes';
+Modify it to show the population of Germany
+
+2. Checking a list The word IN allows us to check if an item is in a list. The example shows the name and population for the countries 'Brazil', 'Russia', 'India' and 'China'
+Show the name and the population for 'Sweden', 'Norway' and 'Denmark'.
+
+3. Which countries are not too small and not too big? BETWEEN allows range checking (range specified is inclusive of boundary values). The example below shows countries with an area of 250,000-300,000 sq. km. Modify it to show the country and the area for countries with an area between 200,000 and 250,000.
+
+----------------------
+Hacker Rank
+----------------------
+1. Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA.
+The CITY table is described as follows:
+
+2. 
+
+
+3. 
+
 
 
 
@@ -24,15 +159,36 @@ Evaluation:
 
 
 
-*******************************************************************************
-Documentation:
-
-
-
-
 
 
 
 
 *******************************************************************************
 Ref:
+- https://www.freecodecamp.org/news/an-animated-introduction-to-sql-learn-to-query-relational-databases/
+- https://playbackpress.com/books/sqlbook
+- https://www.geeksforgeeks.org/database-schemas/
+
+
+Ans:
+Table :"world"
+1. SELECT population FROM world
+  WHERE name= 'Germany';
+
+
+2. SELECT name, population FROM world
+  WHERE name IN ('Sweden', 'Norway', 'Denmark');
+
+
+3. SELECT name, area FROM world
+  WHERE area BETWEEN 200000 AND 250000
+
+Hacker Rank
+1. 
+SELECT * FROM CITY WHERE countrycode='USA' and population > 100000
+
+
+2. 
+
+
+
