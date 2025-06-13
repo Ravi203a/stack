@@ -1,0 +1,12 @@
+Day 2:
+*******************************************************************************
+SQL - Aggregate Functions (COUNT, SUM, AVG, MIN, MAX) & GROUP BY
+- Learning : How to summarize data
+- Task:
+  - Pracrice : SQLZoo (tutorial 5), HackerRank SQL (Aggregation)
+  - Work on initial queries for your sales dataset
+  Project: e.g., total sales, average order value
+- Evaluation: Can you calculate aggregates and group data effectively
+- Documentation: Add Aggregate functions to your SQL Cheatsheet
+
+*******************************************************************************
