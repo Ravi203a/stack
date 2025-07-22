@@ -1,0 +1,71 @@
+1) Basics of Cloud computing
+  1. What is Cloud?
+  2. Types of Cloud deployment models
+    A. Private Cloud
+    B. Public Cloud
+    C. Hybrid Cloud
+  3. Types of Cloud Services
+    A. IaaS – Infrastructure as a Service
+    B. PaaS – Platform as a Service
+    C. SaaS – Software as a Service
+
+2) Cloud computing Platforms / Vendors
+  1. Azure
+  2. AWS – Amazon Web Services
+  3. GCP – Google Cloud Platform etc
+
+3) Introduction to Azure
+
+4) Azure Portal Walkthrough
+  1. What is Subscription?
+  2. What is a Resource Group?
+  3. What is a Resource?
+
+5) Overview of Azure Resources / Services
+  1. Data Factory
+  2. Azure Data bricks
+  3. BLOB Storage, Data Lake Storage Gen1 and Gen2
+  4. Azure SQL Server, SQL Database
+  5. Key Vault
+  6. Function App
+  7. Logic Apps
+
+6) Introduction to BigData
+  1. What is Data?
+  2. What is BigData?
+  3. Data Sources of Big Data?
+  4. Characteristics of BigData
+
+5. Variety, Velocity, Volume, Veracity, Value
+6. Types of Data
+A. Structured Data
+B. Semi-structured Data
+C. Unstructured Data
+
+7) Python Basics
+  1. Variables
+  2. DataTypes
+  3. Operators
+  4. Collections
+  5. Functions
+  6. Packagea and Modules
+
+8) Basics of SQL
+  1. DQL Commands (select)
+  2. DDL commands (create, alter, drop , truncate)
+  3. DML Commands (insert , update, delete, merge)
+  4. Joins
+  5. Window functions
+  6. Aggregate functions
+
+9) Over View of Azure Storage Accounts
+  1. Types of strorage accounts
+  2. Blob storage
+  3. Access Tiers
+  4. Data Replication Policies
+  5. Azure Data Lake Storage Gen2
+
+10) Azure Key Vault
+  1. Introduction to Key Vault
+  2. Keys, Secrets, Certificates
+  3. Creating and configuring Key Vault
